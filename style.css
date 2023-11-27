@@ -93,10 +93,15 @@ nav {
   font-weight: 400;
   font-family: 'Cardo', serif;
   color: #1e1e1e;
+  transition: all 300ms ease;
 }
 
 .menu__link--active {
   font-weight: 700;
+}
+
+.menu__link:not(.menu__link--active):hover {
+  text-decoration: underline;
 }
 
 .sign-in-btn {
@@ -116,6 +121,13 @@ nav {
   border: 3px solid #232323;
   border-radius: 8px;
   cursor: pointer;
+  transition: all 300ms ease;
+}
+
+.sign-in-btn:hover,
+.sign-in-btn:focus {
+  background-color: #232323;
+  color: #eae8e8;
 }
 
 .hero {
@@ -162,6 +174,13 @@ nav {
   border: 3px solid #232323;
   border-radius: 8px;
   cursor: pointer;
+  transition: all 300ms ease;
+}
+
+.hero__btn:hover,
+.hero__btn:focus {
+  color: #232323;
+  background-color: #eae8e8;
 }
 
 .hero__container {
@@ -227,6 +246,13 @@ nav {
   border: 3px solid #eae8e8;
   border-radius: 8px;
   cursor: pointer;
+  transition: all 300ms ease;
+}
+
+.banner__button:hover,
+.banner__button:focus {
+  color: #1e1e1e;
+  background-color: #eae8e8;
 }
 
 .section-gallery {
@@ -310,6 +336,11 @@ nav {
 .badges__item {
   padding-right: 8px;
   padding-left: 8px;
+  transition: all 300ms ease;
+}
+
+.badges__item:hover {
+     text-decoration: underline;
 }
 
 .badges__item:not(:last-child) {
@@ -421,8 +452,7 @@ nav {
   width: 750px;
 }
 .fa-plus {
-     cursor: pointer;
-
+  cursor: pointer;
 }
 
 .section-faq__title {
@@ -485,28 +515,28 @@ nav {
 }
 
 .review__title {
-    text-align: center;
-    color: #1e1e1e;
-    font-size: 25px;
-    line-height: 1;
-    font-weight: 700;
-    margin-bottom: 23px;
-    margin-top: 45px;
+  text-align: center;
+  color: #1e1e1e;
+  font-size: 25px;
+  line-height: 1;
+  font-weight: 700;
+  margin-bottom: 23px;
+  margin-top: 45px;
 }
 
 .review__text {
-    text-align: center;
-    color: #6d6d6d;
-    font-size: 16px;
-    line-height: 1;
-    font-weight: 400;
+  text-align: center;
+  color: #6d6d6d;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 400;
 }
 
-.section-reviews-btn  {
-    position: absolute;
-     width: 82px;
-     height: 75px;
-     display: flex;
+.section-reviews-btn {
+  position: absolute;
+  width: 82px;
+  height: 75px;
+  display: flex;
   align-items: center;
   justify-content: center;
   color: #232323;
@@ -517,105 +547,155 @@ nav {
   border-radius: 8px;
   cursor: pointer;
   transition: all 300ms ease;
-
 }
 
-.section-reviews-btn:hover, .section-reviews-btn:focus {
-    color: #eae8e8;
-    background-color: #232323;
+.section-reviews-btn:hover,
+.section-reviews-btn:focus {
+  color: #eae8e8;
+  background-color: #232323;
 }
 
 .reviews__container {
-     position: relative;
+  position: relative;
 }
-
 
 .btn--left {
-     left:-20px;
-     top: 60%;
+  left: -20px;
+  top: 60%;
 }
 .btn--right {
-     right:-20px;
-     top: 60%;
+  right: -20px;
+  top: 60%;
 }
 
 .section-subscription {
-    padding-top: 100px;
-    padding-bottom: 220px;
-    background-color: #eae8e8;
+  padding-top: 100px;
+  padding-bottom: 220px;
+  background-color: #eae8e8;
 }
 .subscription__container {
-     display: flex;
-     gap: 90px;
-
+  display: flex;
+  gap: 90px;
 }
 .subscription__wrap {
-     width: 455px;
-     height: 730px;
+  width: 455px;
+  height: 730px;
 }
 
 .subscription__title {
-    color: #1e1e1e;
-    font-size: 82px;
-    line-height: 1;
-    font-weight: 900;
-    margin-bottom: 40px;
+  color: #1e1e1e;
+  font-size: 82px;
+  line-height: 1;
+  font-weight: 900;
+  margin-bottom: 40px;
 }
 
 .subscription__form {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    
-    
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
-
 
 .subscription-form__input,
 .subscription-form__comment {
-    border: 3px solid #1e1e1e;
-    border-radius: 10px;
-    padding-left: 20px;
-    height: 56px;
-    background-color: #eae8e8;
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
-    font-size: 21px;
-
+  border: 3px solid #1e1e1e;
+  border-radius: 10px;
+  padding-left: 20px;
+  height: 56px;
+  background-color: #eae8e8;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 21px;
 }
 
-.subscription-form__comment{
-    padding-top: 10px;
-     width: 455px;
-     height: 225px;
-    
+.subscription-form__comment {
+  padding-top: 10px;
+  width: 455px;
+  height: 225px;
 }
-.subscription-form__input::placeholder, .subscription-form__comment::placeholder {
-    font-weight: 400;
-    font-size: 21px;
-    font-family: 'Lato', sans-serif;
-
+.subscription-form__input::placeholder,
+.subscription-form__comment::placeholder {
+  font-weight: 400;
+  font-size: 21px;
+  font-family: 'Lato', sans-serif;
 }
 
 .subscription-form__btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #eae8e8;
-    font-family: 'Lato', sans-serif;
-    font-size: 21px;
-    line-height: 1.2;
-    font-weight: 700;
-    width: 100%;
-    height: 52px;
-    background-color: #232323;
-    border: 3px solid #232323;
-    border-radius: 8px;
-    margin-top: 40px;
-    cursor: pointer;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #eae8e8;
+  font-family: 'Lato', sans-serif;
+  font-size: 21px;
+  line-height: 1.2;
+  font-weight: 700;
+  width: 100%;
+  height: 52px;
+  background-color: #232323;
+  border: 3px solid #232323;
+  border-radius: 8px;
+  margin-top: 40px;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
 
+.subscription-form__btn:hover,
+.subscription-form__btn:focus {
+  color: #232323;
+  background-color: #eae8e8;
+}
 
+.footer {
+  padding-top: 121px;
+  padding-bottom: 118px;
+  background-color: #c5c5c5;
+}
+.footer__nav {
+  display: flex;
+  gap: 100px;
+  margin-bottom: 130px;
+}
+
+.footer__logo {
+  display: block;
+  color: #1e1e1e;
+  text-decoration: none;
+  font-size: 64px;
+  font-weight: 900;
+  font-family: 'Cardo', serif;
+  flex-basis: 231px;
+}
+
+.footer__title {
+  font-size: 25px;
+  font-weight: 900;
+  margin-bottom: 53px;
+}
+
+.footer__nav-list {
+  display: flex;
+  column-gap: 60px;
+  row-gap: 25px;
+  flex-wrap: wrap;
+  width: 869px;
+}
+
+.footer__item {
+  flex-basis: calc((100% - 180px) / 4);
+}
+.footer__link {
+  font-size: 21px;
+  font-weight: 400px;
+  color: #1e1e1e;
+  text-decoration: none;
+}
+
+.footer__rights {
+  text-align: center;
+  font-weight: 400;
+  font-size: 21px;
+  color: #1e1e1e;
+}
 
 /*
 _________________________________________
