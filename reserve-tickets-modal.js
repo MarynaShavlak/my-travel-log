@@ -187,7 +187,7 @@ function resetTicketsFormStyles() {
 function getCurrentDate() {
   const currentDate = new Date();
   const day = String(currentDate.getDate()).padStart(2, '0');
-  const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Note: Months are zero-based, so we add 1
+  const month = String(currentDate.getMonth() + 1).padStart(2, '0');
   const year = currentDate.getFullYear();
   const formattedDate = `${day}/${month}/${year}`;
   return formattedDate;
