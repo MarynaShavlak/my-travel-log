@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Lato&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Lato:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
@@ -25,7 +25,7 @@
         <nav class="header__nav">
           <ul class="menu">
             <li class="menu__item">
-              <a href="#" class="menu__link link menu__link--active ">Home </a>
+              <a href="#" class="menu__link link menu__link--active">Home </a>
             </li>
             <li class="menu__item">
               <a href="#" class="menu__link link">Guides </a>
@@ -60,14 +60,18 @@
       </div>
     </section>
 
-    <section class="banner">
-      <div class="container">
-        <h2 class="banner __title"></h2>
-        <p class="banner__text"></p>
+    <section class="banner section--dark-bg">
+      <div class="container container--centered">
+        <h2 class="banner__title">Create a memory to remember</h2>
+        <p class="banner__text">
+          Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do ei
+          usmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+          sus pendisse ultrices gravida.
+        </p>
         <button class="banner__button" type="button">SEND MESSAGE</button>
       </div>
     </section>
-    <section class="section-gallery_ gallery">
+    <section class="section-gallery gallery">
       <div class="container">
         <ul class="gallery__list">
           <li class="gallery__item">
@@ -110,41 +114,51 @@
             </p>
           </li>
         </ul>
+        <div class="container--centered">
+          <h2 class="section-gallery__title">
+            See places you’ve <span>never</span> been before
+          </h2>
+          <ul class="badges">
+            <li class="badges__item">Lorem Ipsum Dolor</li>
+            <li class="badges__item">Lorem Ipsum Dolor</li>
+            <li class="badges__item">Lorem Ipsum Dolor</li>
+          </ul>
+        </div>
 
-        <h2 class="section-gallery__title">
-          See places you’ve <span>never</span>been before
-        </h2>
-        <ul class="badges">
-          <li class="badges__item">Lorem Ipsum Dolor</li>
-          <li class="badges__item">Lorem Ipsum Dolor</li>
-          <li class="badges__item">Lorem Ipsum Dolor</li>
-        </ul>
         <div class="descr-block">
           <img
             src="images/descr-big.png"
             alt="photo of nature"
             class="descr-block__picture picture--big"
           />
-          <img
-            src="images/descr-small.png"
-            alt="photo of nature"
-            class="descr-block__picture picture--small"
-          />
-          <h3 class="descr-block__title">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit sed do ei
-          </h3>
-          <p class="descr-block__text">
-            Lorem ipsum dolor sit amet, consectetur adip isicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud. exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.
-          </p>
+          <div class="descr-block__wrap">
+            <img
+              src="images/descr-small.png"
+              alt="photo of nature"
+              class="descr-block__picture picture--small"
+            />
+            <div class="descr-block__text-wrap">
+              <h3 class="descr-block__title">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit sed do ei
+              </h3>
+              <div><p class="descr-block__text">
+                Lorem ipsum dolor sit amet, consectetur adip isicing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud. 
+              </p>
+              <p class="descr-block__text">
+                 exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur.
+              </p></div>
+              
+            </div>
+          </div>
         </div>
       </div>
     </section>
-    <section class="section-chose">
+    <section class="section-chose section--dark-bg">
       <div class="container">
         <div class="wrap">
           <h3 class="section-chose__title">Choose anywhere you’d like to be</h3>
