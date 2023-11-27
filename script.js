@@ -1,8 +1,14 @@
+const refsSignUp = {
+  openModalBtn: document.querySelector('[data-signin-modal-open]'),
+  closeModalBtn: document.querySelector('[data-signin-modal-close]'),
+  modal: document.querySelector('[data-signin-modal]'),
+  form: document.querySelector('.reg-form'),
+};
+
 const registrationFormSelector = '#registrationForm';
 const usernameFieldSelector = '#username';
 const emailFieldSelector = '#email';
 const passwordFieldSelector = '#password';
-const regFormSelector = '.reg-form';
 
 const validationReg = new JustValidate(registrationFormSelector);
 
@@ -32,10 +38,34 @@ validationReg
     addErrorClasses();
   });
 
-const regForm = document.querySelector(regFormSelector);
-regForm.addEventListener('submit', sendForm);
-regForm.addEventListener('input', handleInput);
-const regErrorInputs = regForm.querySelectorAll('input');
+registerEventListeners();
+
+function registerEventListeners() {
+  refsSignUp.openModalBtn.addEventListener('click', toggleRegModal);
+  refsSignUp.closeModalBtn.addEventListener('click', handleModalClose);
+  refsSignUp.modal.addEventListener('click', toggleRegModal);
+  refsSignUp.form.addEventListener('click', stopPropagation);
+  refsSignUp.form.addEventListener('submit', sendForm);
+  refsSignUp.form.addEventListener('input', handleInput);
+}
+
+function toggleRegModal() {
+  document.body.classList.toggle('modal-open');
+  refsSignUp.modal.classList.toggle('backdrop--hidden');
+  resetRegForm();
+}
+
+function handleModalClose(e) {
+  e.stopPropagation();
+  toggleRegModal();
+  resetRegForm();
+}
+
+function resetRegForm() {
+  refsSignUp.form.reset();
+  validationReg.refresh();
+  resetRegFormStyles();
+}
 
 function handleInput(e) {
   const { target } = e;
@@ -61,21 +91,21 @@ function getFormData(form) {
 
 function sendForm(e) {
   e.preventDefault();
-  const regForm = document.querySelector(regFormSelector);
-  const formData = getFormData(regForm);
+  const formData = getFormData(refsSignUp.form);
   if (
     Object.values(formData).every(value => value !== '' && value !== undefined)
   ) {
     console.log('formData : ', formData);
     validationReg.refresh();
-    regForm.reset();
+    refsSignUp.form.reset();
+    handleModalClose(e);
   } else {
     console.log('Data in form is not valid');
   }
 }
 
 function addErrorClasses() {
-  const labels = regForm.querySelectorAll('div.form__field');
+  const labels = refsSignUp.form.querySelectorAll('div.form__field');
   labels.forEach(label => {
     const errorChild = label.querySelector('.just-validate-error-label');
     if (errorChild) {
@@ -89,11 +119,20 @@ function addErrorClasses() {
   });
 }
 
-function removeErrorClasses(labelChild, iChild)  {
+function removeErrorClasses(labelChild, iChild) {
   if (labelChild && iChild) {
     labelChild.classList.remove('error');
     iChild.classList.remove('error');
   }
-};
+}
 
+function resetRegFormStyles() {
+  const icons = refsSignUp.form.querySelectorAll('.reg-form__input-icon');
+  const labels = refsSignUp.form.querySelectorAll('.form__label');
+  icons.forEach(item => item.classList.remove('error'));
+  labels.forEach(item => item.classList.remove('error'));
+}
 
+export function stopPropagation(e) {
+  e.stopPropagation();
+}

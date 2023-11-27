@@ -19,6 +19,8 @@
     />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="modal.css" />
+    <link rel="stylesheet" href="send-message-modal.css" />
+    <link rel="stylesheet" href="reserve-tickets-modal.css" />
   </head>
   <body>
     <header class="header">
@@ -39,7 +41,9 @@
             </li>
           </ul>
         </nav>
-        <button class="sign-in-btn" type="button">Sign Up</button>
+        <button class="sign-in-btn" type="button" data-signin-modal-open>
+          Sign Up
+        </button>
       </div>
     </header>
     <main>
@@ -52,7 +56,7 @@
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
               ipsum sus pendisse ultrices gravida.
             </p>
-            <button class="hero__btn btn--buy" type="button">
+            <button class="hero__btn btn--buy" type="button" data-tickets-modal-open>
               Reserve Ticket
             </button>
           </div>
@@ -70,7 +74,13 @@
             usmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
             sus pendisse ultrices gravida.
           </p>
-          <button class="banner__button" type="button">SEND MESSAGE</button>
+          <button
+            class="banner__button"
+            type="button"
+            data-sendMessage-modal-open
+          >
+            SEND MESSAGE
+          </button>
         </div>
       </section>
       <section class="section-gallery gallery">
@@ -385,10 +395,13 @@
         </p>
       </div>
     </footer>
-    <!-- Для показу вікна із формою реєстрації потрібно видалити із модального вікна клас isHidden-->
-    <div class="form__wrap">
+    <!-- Sign Up Modal-->
+    <div class="backdrop backdrop--hidden" data-signin-modal>
       <form class="reg-form" id="registrationForm">
         <h2 class="form__title">Sign Up</h2>
+        <button type="button" class="modal__btn-close" data-signin-modal-close>
+            <i class="fa-solid fa-xmark close-modal"></i>
+          </button>
         <ul class="fields">
           <li class="fields__item">
             <div class="form__field" >
@@ -425,121 +438,95 @@
         </div>
       </form>
     </div>
-    <!-- Для показу вікна із формою входу потрібно видалити із модального вікна клас isHidden-->
-    <div class="modal login-modal isHidden">
-      <form class="modal__form">
-        <h2 class="form__title">Вхід та Реєстрація</h2>
-        <ul class="fields">
-          <li class="fields__item">
-            <label class="form__label" for="user-login">Логін</label>
-            <input class="form__input" type="text" id="user-login" />
-          </li>
-          <li class="fields__item">
-            <label class="form__label" for="user-password">Пароль</label>
-            <input class="form__input" type="text" id="user-password" />
-          </li>
-        </ul>
-        <ul class="action-btn-list">
-          <li class="action-btn__item">
-            <button type="submit" class="form__btn btn--login">Увійти</button>
-          </li>
-          <li class="action-btn__item">
-            <button type="button" class="form__btn btn--redirect-to-reg">
-              Реєстрація
-            </button>
-          </li>
-        </ul>
+       
+    <!-- Send Message Modal-->
+    <div class="backdrop backdrop--hidden" data-sendMessage-modal>
+      <form class="subscription__form-send" id="sendMessageForm">
+        <h2 class="subscription__title-send">
+          We are available to answer all your questions
+        </h2>
+        <button
+          type="button"
+          class="modal__btn-close"
+          data-sendMessage-modal-close
+        >
+          <i class="fa-solid fa-xmark close-modal"></i>
+        </button>
+        <div  class="send__field"><label for="nameSend" class="send__label">First Name*</label>
+        <input
+          type="text"
+          name="nameSend"
+          id="nameSend"
+          class="subscription-form__input send__input"
+        /></div>
+        <div class="send__field"><label for="nameSend" class="send__label">Email*</label>
+        <input
+          type="email"
+          name="emailSend"
+          id="emailSend"
+          class="subscription-form__input send__input"
+        /></div>
+        <div class="send__field send__field--comment"><label for="nameSend" class="send__label">Message*</label>
+        <textarea
+          name="commentSend"
+          id="commentSend"
+          class="subscription-form__comment send__comment"
+          style="width: 100%!important; height: 150px !important"
+        ></textarea></div>
+        
+        <button type="submit" class="send__btn">Send</button>
       </form>
-    </div>
-    <!-- <form class="reg-form" id="registrationForm">
-        <h2 class="form__title">Sign Up</h2>
-        <ul class="fields">
-          <li class="fields__item">
-            <label class="form__label" for="name">Full Name</label>
-            <input
-              class="form__input"
-              type="text"
-              id="name"
-              placeholder="Enter your name"
-            />
-          </li>
-          <li class="fields__item">
-            <label class="form__label" for="username">Username</label>
-            <input
-              class="form__input"
-              type="text"
-              id="username"
-              placeholder="Enter your username"
-            />
-          </li>
-          <li class="fields__item">
-            <label class="form__label" for="email">Email</label>
-            <input
-              class="form__input"
-              type="email"
-              id="email"
-              placeholder="Enter your email"
-            />
-          </li>
-          <li class="fields__item">
-            <label class="form__label" for="phone">Phone Number</label>
-            <input
-              class="form__input"
-              type="text"
-              id="phone"
-              placeholder="Enter your number"
-            />
-          </li>
-          <li class="fields__item">
-            <label class="form__label" for="password">Password</label>
-            <input
-              class="form__input"
-              type="password"
-              id="password"
-              placeholder="Enter your password"
-            />
-          </li>
-          <li class="fields__item">
-            <label class="form__label" for="passwordConfirm"
-              >Confirm Password</label
-            >
-            <input
-              class="form__input"
-              type="password"
-              id="passwordConfirm"
-              placeholder="Confirm your password"
-            />
-          </li>
-          <li class="fields__item">
-            <label class="form__label">Gender</label>
-            <div class="form__radio-group" id="advanced-usage_communication_radio_group">
-              <div class="radio-group__wrap">
-                <input type="radio" id="male" name="gender" class="input-gender" value="Male" />
-                <label for="male">Male</label>
+          </div>
+    <!-- Send Ticlets Modal-->
+    <div class="backdrop backdrop--hidden" data-tickets-modal>
+        <form class="tickets-form" id="ticketsForm">
+          <h2 class="form__title">Reserve Tickets</h2>
+          <button type="button" class="modal__btn-close" data-tickets-modal-close>
+              <i class="fa-solid fa-xmark close-modal"></i>
+            </button>
+          <ul class="fields">
+            <li class="fields__item">
+              <div class="form__field" >
+                <i class="fa-solid fa-user reg-form__input-icon"></i>
+                <input class="form__input" placeholder="name" type="text" id="nameTickets" />
+                <label class="form__label" for="nameTickets">Name</label>
               </div>
+            </li>
+            <li class="fields__item">
+              <div class="form__field" >
+                <i class="fa-solid fa-envelope reg-form__input-icon"></i>
+                <input class="form__input" placeholder="email" type="email" id="emailTickets"
+              />
+              <label class="form__label" for="emailTickets">Email</label>
+              
+          </div>
+            </li>
+            <li class="fields__item">
+                <label class="coutry-select" for="contrySelect"
+                  >Select country to go</label
+                >
+                <div class="input-wrapper">
+                  <select class="form__input form__select" id="contrySelect">
+                    <option class="tickets__option " value="">--Please select a country--</option>
+                    <option class="tickets__option " value="France">France</option>
+                    <option class="tickets__option " value="Germany">Germany</option>
+                    <option class="tickets__option " value="Irelandr">Ireland</option>
+                    <option class="tickets__option " value="USA">USA</option>
+                    <option class="tickets__option " value="Spain">Spain</option>
+                  </select>
+                </div>
+              </li>
+  
+                      </ul>
+          <button type="submit" class="form__btn btn--ticket">Reserve Ticket</button>
+          
+        </form>
+      </div>
 
-              <div class="radio-group__wrap">
-                <input type="radio" id="female" name="gender" class="input-gender" value="Female" />
-                <label for="female">Female</label>
-              </div>
-
-              <div class="radio-group__wrap">
-                <input
-                  type="radio"
-                  id="preferNotToSay"
-                  name="gender"
-                  class="input-gender"
-                  value="Prefer not to say"
-                />
-                <label for="preferNotToSay">Prefer not to say</label>
-              </div>
-            </div>
-          </li>
-        </ul>
-        <button type="submit" class="form__btn btn--register">Register</button>
-      </form> -->
-    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+   <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
     <script src="inputmask.min.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js" type="module"></script>
+    <script src="sendMessageModal.js" type="module"></script>
+    <script src="reserve-tickets-modal.js" type="module"></script>
   </body>
 </html>

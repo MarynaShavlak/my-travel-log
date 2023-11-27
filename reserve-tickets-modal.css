@@ -1,0 +1,32 @@
+/*
+_________________________________________
+Modal styles
+_________________________________________
+
+*/
+
+.tickets-form{
+  position: absolute;
+  padding: 30px;
+  margin: 0 auto;
+  width: 400px;
+  height: 550px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  background: #333232;
+  border-radius: 4px;
+  backdrop-filter: blur(20px);
+  color: #eae8e8;
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px, rgba(255, 255, 255, 0.12) 0px -12px 30px, rgba(255, 255, 255, 0.12) 0px 4px 6px, rgba(255, 255, 255, 0.17) 0px 12px 13px, rgba(255, 255, 255, 0.09) 0px -3px 5px;
+}
+
+.form__select {
+margin-top: 10px;
+   padding-left: 10px;
+   border: 1px solid #eae8e8;
+}
+
+.tickets__option {
+  color: #333232;
+}
