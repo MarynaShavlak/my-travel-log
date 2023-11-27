@@ -14,9 +14,13 @@ const countryFieldSelector = '#contrySelect';
 const startDateFieldSelector = '#date-text_start_date';
 const endDateFieldSelector = '#date-text_end_date';
 
-
 const validationTickets = new JustValidate(ticketsFormSelector);
-
+const inputStartDate = document.querySelector(startDateFieldSelector);
+const inputEndDate = document.querySelector(endDateFieldSelector);
+const dateMask = new Inputmask({ alias: "datetime", inputFormat: "dd/mm/yyyy"});
+dateMask.mask(inputStartDate);
+dateMask.mask(inputEndDate);
+const currentDate = getCurrentDate();
 
 validationTickets
   .addField(nameFieldSelector, [
@@ -36,8 +40,7 @@ validationTickets
     { rule: 'required', errorMessage: 'Please enter your email' },
     { rule: 'email', errorMessage: 'Please enter a valid email address' },
   ])
-  .addField(
-    countryFieldSelector,
+  .addField(countryFieldSelector,
     [
       {
         rule: 'required',
@@ -55,11 +58,14 @@ validationTickets
       rule: 'required',
     },
     {
-      plugin: window.JustValidatePluginDate(() => ({
-        format: 'dd/MM/yyyy',
-      })),
-      errorMessage: 'Date should be in dd/MM/yyyy format (e.g. 28/11/2023)',
-    },
+      plugin: window.JustValidatePluginDate(() => {
+        return {
+          format: 'dd/MM/yyyy',
+          isAfter: currentDate,
+        };
+      }),
+      errorMessage: 'Date should be after current date',
+      },
   ])
   .addField(endDateFieldSelector, [
     {
@@ -127,6 +133,8 @@ function getFormData(form) {
     name: form.querySelector(nameFieldSelector).value,
     email: form.querySelector(emailFieldSelector).value,
     country: form.querySelector(countryFieldSelector).value,
+    startDate: form.querySelector(startDateFieldSelector).value,
+    endDate: form.querySelector(endDateFieldSelector).value,
   };
 }
 
@@ -169,10 +177,18 @@ function removeErrorClasses(labelChild, iChild) {
 
 function resetTicketsFormStyles() {
   const icons = refsReserveTickets.form.querySelectorAll(
-    '.tickest-form__input-icon',
+    '.reg-form__input-icon',
   );
   const labels = refsReserveTickets.form.querySelectorAll('.form__label');
   icons.forEach(item => item.classList.remove('error'));
   labels.forEach(item => item.classList.remove('error'));
 }
 
+function getCurrentDate() {
+  const currentDate = new Date();
+  const day = String(currentDate.getDate()).padStart(2, '0');
+  const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Note: Months are zero-based, so we add 1
+  const year = currentDate.getFullYear();
+  const formattedDate = `${day}/${month}/${year}`;
+  return formattedDate;
+}
