@@ -1,0 +1,368 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.link {
+    cursor: pointer;
+    text-decoration: none;
+    color: #ffffff;
+}
+ul {
+    list-style: none;
+}
+.header, .hero {
+    background-color: #D8B422;
+    position: relative;
+    
+}
+.header {
+    background-image: url(images/gradient.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    width: 1200px;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    background-color: #729100;
+    color: #ffffff;
+    align-items: center;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 28px;
+    padding-left: 25px;
+    
+}
+
+.wrap {
+    display: flex;
+}
+
+nav{
+    display: flex;
+}
+
+.header__logo {
+height: 28px;
+margin-right: 64px;
+}
+
+.menu {
+    display: flex;
+    gap: 34px;
+    align-items: center;
+}
+
+.menu__link {
+    font-family: Sofia Sans;
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 400;
+}
+
+.item--dropdown {
+    position: relative; 
+}
+
+.menu__drop-down {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    z-index: 1;
+    width: 150px;
+}
+
+.item--dropdown:hover .menu__drop-down {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+.drop-down__item {
+    transition: background-color ease-in 300ms;
+
+}
+
+.drop-down__item:hover {
+    background-color: rgba(217,217,128);
+
+}
+
+
+.drop-down__link {
+    font-family: Sofia Sans;
+    display:block;
+    padding: 10px;
+    font-size: 16px;
+    color: #000000;
+
+}
+.drop-down__item:not(:last-child) {
+    border-bottom: 1px solid rgba(217,217,128);
+}
+
+.socials{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.socials__item {
+    background-color: rgba(217,217,128, 0.5);
+    border-radius: 50%;
+    width: 37px;
+    height: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color ease-in 300ms;
+    cursor: pointer;
+}
+
+.socials__item:hover {
+    background-color: #ffffff;
+
+}
+
+.socials__item:hover  .socials__icon {
+color: #729100;
+}
+
+.socials__icon {
+    transition: color ease-in 300ms;
+}
+
+.fa-paper-plane{
+    font-size: 19px;
+}
+.fa-instagram{
+    font-size: 27px;
+}
+.fa-facebook-f, .fa-phone {
+    font-size: 19px;
+}
+
+.sign-in-btn {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: #ffffff;
+    font-family: Sofia Sans;
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 400;
+    padding-left: 11px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-color: transparent;
+    border: none;
+    border-left: 2px solid #ffffff;
+    cursor: pointer;
+    margin-left: 27px;
+    
+   
+}
+
+.hero {
+    padding-top: 70px;
+    padding-bottom: 54px;
+    height: 740px;
+    overflow: hidden;
+    background-image: url(images/gradient.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.hero__title{
+    font-family: Outfit, sans-serif;
+    color: #ffffff;
+    max-width: 595px;
+    font-size: 64px;
+    font-weight: 400;
+}
+.hero__title span{
+    font-weight: 700;
+}
+
+.hero__text {
+    color: #ffffff;
+    margin-top: 30px;
+    margin-bottom: 23px;
+    font-size: 32px;
+    font-weight: 400;
+    font-family: Outfit, sans-serif;
+    max-width: 645px;
+    
+}
+
+.hero__btn-list {
+    display: flex;
+    gap: 50px;
+}
+
+.hero__btn {
+    font-family: Outfit, sans-serif;
+    border: 2px solid transparent;
+    color: #ffffff;
+    font-size: 36px;
+    padding: 13px 20px;
+    cursor: pointer;
+    
+}
+
+.btn--buy {
+    border-radius: 20px;
+    background-color: #729100;
+    transition: background-color ease-in 300ms,color ease-in 300ms;
+ 
+}
+
+.btn--buy:hover {
+    color: #729100;
+    background-color: #ffffff;
+}
+
+.btn--more {
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    transition: background-color ease-in 300ms, color ease-in 300ms ;
+}
+
+.btn--more:hover {
+   color: #729100;
+   background-color: #ffffff;
+}
+
+
+.hero__container {
+    display: flex;
+    gap:23px;
+}
+.hero__image-thumb {
+position: relative;
+
+}
+.hero__image {
+    position:absolute;
+    top:-130px;
+    left:-10px;
+    background-image: url(images/hero.png);
+    background-repeat: no-repeat;
+    width: 619px;
+    height: 885px;
+    background-position: center;
+    background-size: contain;
+}
+
+.sign-in__icon {
+    font-size: 31px;
+}
+
+.modal {
+    position:fixed;
+    top:0;
+    left:0;
+    background-image: url(images/registration-back.png);
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    z-index:2;
+    background-position: center;
+    background-size: cover;
+}
+
+.modal__form {
+    position: absolute;
+    padding: 26px 229px ;
+    margin: 0 auto;
+    width: 854px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.32);
+    border-radius: 30px;
+    backdrop-filter: blur(20px); 
+    color: #ffffff;
+}
+
+.form__title{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 33px;
+}
+
+.fields {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 33px;
+}
+
+.fields__item {
+    width: 318px;
+}
+.form__label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+
+
+.form__input {
+    width:100%;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+ 
+}
+
+.form__btn {
+    font-family: Outfit, sans-serif;
+    border-radius: 15px;
+    border: none;
+    background-color: #729100;
+    font-size: 36px;
+    padding: 15px 20px;
+    color: #ffffff;
+    width:100%;
+    cursor: pointer;
+    transition: background-color ease-in 300ms, color ease-in 300ms;
+}
+
+
+.form__btn:hover {
+    color: #729100;
+    background-color: #ffffff;
+}
+
+.action-btn-list {
+     display: flex;
+     gap:20px;
+}
+
+.btn--redirect-to-reg {
+    color: #729100;
+    background-color: #ffffff;
+}
+.btn--redirect-to-reg:hover {
+    background-color: #729100;
+    color: #ffffff;
+}
+
+.isHidden {
+    display: none;
+}
