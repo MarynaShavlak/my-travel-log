@@ -1,3 +1,14 @@
+/* colors
+
+body #000000
+link #1e1e1e
+button text #eae8e8
+review text #6d6d6d
+footer #c5c5c5
+
+*/
+
+
 *{
     margin: 0;
     padding: 0;
@@ -11,15 +22,25 @@
 ul {
     list-style: none;
 }
+ body {
+    color: #1e1e1e;
+    font-family: 'Lato', sans-serif;
+ }
+
+ h1, h2, h3, h4 {
+    font-family: 'Cardo', serif;
+
+ }
+
 .header, .hero {
-    background-color: #D8B422;
+    background-color: #eae8e8;
     position: relative;
     
 }
 .header {
-    background-image: url(images/gradient.png);
+    /* background-image: url(images/gradient.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
 }
 
 .container {
@@ -34,8 +55,6 @@ ul {
     display: flex;
     justify-content: space-between;
     border-radius: 20px;
-    background-color: #729100;
-    color: #ffffff;
     align-items: center;
     padding-top: 7px;
     padding-bottom: 7px;
@@ -52,10 +71,6 @@ nav{
     display: flex;
 }
 
-.header__logo {
-height: 28px;
-margin-right: 64px;
-}
 
 .menu {
     display: flex;
@@ -64,144 +79,55 @@ margin-right: 64px;
 }
 
 .menu__link {
-    font-family: Sofia Sans;
-    font-size: 20px;
+    font-size: 21px;
     line-height: 1.2;
     font-weight: 400;
-}
-
-.item--dropdown {
-    position: relative; 
-}
-
-.menu__drop-down {
-    display: none;
-    position: absolute;
-    background-color: #ffffff;
-    z-index: 1;
-    width: 150px;
-}
-
-.item--dropdown:hover .menu__drop-down {
-    display: flex;
-    flex-direction: column;
-  }
-
-
-.drop-down__item {
-    transition: background-color ease-in 300ms;
-
-}
-
-.drop-down__item:hover {
-    background-color: rgba(217,217,128);
-
+    font-family: 'Cardo', serif;
 }
 
 
-.drop-down__link {
-    font-family: Sofia Sans;
-    display:block;
-    padding: 10px;
-    font-size: 16px;
-    color: #000000;
-
-}
-.drop-down__item:not(:last-child) {
-    border-bottom: 1px solid rgba(217,217,128);
-}
-
-.socials{
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-.socials__item {
-    background-color: rgba(217,217,128, 0.5);
-    border-radius: 50%;
-    width: 37px;
-    height: 37px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color ease-in 300ms;
-    cursor: pointer;
-}
-
-.socials__item:hover {
-    background-color: #ffffff;
-
-}
-
-.socials__item:hover  .socials__icon {
-color: #729100;
-}
-
-.socials__icon {
-    transition: color ease-in 300ms;
-}
-
-.fa-paper-plane{
-    font-size: 19px;
-}
-.fa-instagram{
-    font-size: 27px;
-}
-.fa-facebook-f, .fa-phone {
-    font-size: 19px;
+.menu__link--active {
+    font-weight: 700;
 }
 
 .sign-in-btn {
     display: flex;
     align-items: center;
-    gap: 11px;
-    color: #ffffff;
-    font-family: Sofia Sans;
-    font-size: 20px;
+    justify-content: center;
+    color: #232323;
+    font-family: 'Lato', sans-serif;
+    font-size: 33px;
     line-height: 1.2;
     font-weight: 400;
     padding-left: 11px;
     padding-top: 4px;
     padding-bottom: 4px;
     background-color: transparent;
-    border: none;
-    border-left: 2px solid #ffffff;
+    border: 1px solid #232323;
     cursor: pointer;
-    margin-left: 27px;
     
    
 }
 
 .hero {
-    padding-top: 70px;
-    padding-bottom: 54px;
-    height: 740px;
-    overflow: hidden;
-    background-image: url(images/gradient.png);
+    /* background-image: url(images/gradient.png); */
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 
 .hero__title{
-    font-family: Outfit, sans-serif;
-    color: #ffffff;
-    max-width: 595px;
-    font-size: 64px;
-    font-weight: 400;
-}
-.hero__title span{
+    color: #1e1e1e;
+    /* max-width: 595px; */
+    font-size: 82px;
     font-weight: 700;
 }
 
+
 .hero__text {
-    color: #ffffff;
-    margin-top: 30px;
-    margin-bottom: 23px;
-    font-size: 32px;
+    color: #1e1e1e;
+    font-size: 16px;
     font-weight: 400;
-    font-family: Outfit, sans-serif;
-    max-width: 645px;
     
 }
 
@@ -256,12 +182,12 @@ position: relative;
     position:absolute;
     top:-130px;
     left:-10px;
-    background-image: url(images/hero.png);
+    /* background-image: url(images/hero.png);
     background-repeat: no-repeat;
     width: 619px;
     height: 885px;
     background-position: center;
-    background-size: contain;
+    background-size: contain; */
 }
 
 .sign-in__icon {
