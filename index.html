@@ -56,7 +56,11 @@
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
               ipsum sus pendisse ultrices gravida.
             </p>
-            <button class="hero__btn btn--buy" type="button" data-tickets-modal-open>
+            <button
+              class="hero__btn btn--buy"
+              type="button"
+              data-tickets-modal-open
+            >
               Reserve Ticket
             </button>
           </div>
@@ -400,33 +404,45 @@
       <form class="reg-form" id="registrationForm">
         <h2 class="form__title">Sign Up</h2>
         <button type="button" class="modal__btn-close" data-signin-modal-close>
-            <i class="fa-solid fa-xmark close-modal"></i>
-          </button>
+          <i class="fa-solid fa-xmark close-modal"></i>
+        </button>
         <ul class="fields">
           <li class="fields__item">
-            <div class="form__field" >
+            <div class="form__field">
               <i class="fa-solid fa-user reg-form__input-icon"></i>
-              <input class="form__input" placeholder="username" type="text" id="username" />
+              <input
+                class="form__input"
+                placeholder="username"
+                type="text"
+                id="username"
+              />
               <label class="form__label" for="username">Username</label>
             </div>
           </li>
           <li class="fields__item">
-            <div class="form__field" >
+            <div class="form__field">
               <i class="fa-solid fa-envelope reg-form__input-icon"></i>
-              <input class="form__input" placeholder="email" type="email" id="email"
-            />
-            <label class="form__label" for="email">Email</label>
-            
-        </div>
+              <input
+                class="form__input"
+                placeholder="email"
+                type="email"
+                id="email"
+              />
+              <label class="form__label" for="email">Email</label>
+            </div>
           </li>
 
           <li class="fields__item">
-            <div class="form__field"              >
+            <div class="form__field">
               <i class="fa-solid fa-lock reg-form__input-icon"></i>
-              <input class="form__input" placeholder="password" type="password" id="password"
-            />
-            <label class="form__label" for="password">Password</label>
-        </div>
+              <input
+                class="form__input"
+                placeholder="password"
+                type="password"
+                id="password"
+              />
+              <label class="form__label" for="password">Password</label>
+            </div>
           </li>
         </ul>
         <button type="submit" class="form__btn btn--register">SIGN UP</button>
@@ -438,7 +454,7 @@
         </div>
       </form>
     </div>
-       
+
     <!-- Send Message Modal-->
     <div class="backdrop backdrop--hidden" data-sendMessage-modal>
       <form class="subscription__form-send" id="sendMessageForm">
@@ -452,78 +468,126 @@
         >
           <i class="fa-solid fa-xmark close-modal"></i>
         </button>
-        <div  class="send__field"><label for="nameSend" class="send__label">First Name*</label>
-        <input
-          type="text"
-          name="nameSend"
-          id="nameSend"
-          class="subscription-form__input send__input"
-        /></div>
-        <div class="send__field"><label for="nameSend" class="send__label">Email*</label>
-        <input
-          type="email"
-          name="emailSend"
-          id="emailSend"
-          class="subscription-form__input send__input"
-        /></div>
-        <div class="send__field send__field--comment"><label for="nameSend" class="send__label">Message*</label>
-        <textarea
-          name="commentSend"
-          id="commentSend"
-          class="subscription-form__comment send__comment"
-          style="width: 100%!important; height: 150px !important"
-        ></textarea></div>
-        
+        <div class="send__field">
+          <label for="nameSend" class="send__label">First Name*</label>
+          <input
+            type="text"
+            name="nameSend"
+            id="nameSend"
+            class="subscription-form__input send__input"
+          />
+        </div>
+        <div class="send__field">
+          <label for="nameSend" class="send__label">Email*</label>
+          <input
+            type="email"
+            name="emailSend"
+            id="emailSend"
+            class="subscription-form__input send__input"
+          />
+        </div>
+        <div class="send__field send__field--comment">
+          <label for="nameSend" class="send__label">Message*</label>
+          <textarea
+            name="commentSend"
+            id="commentSend"
+            class="subscription-form__comment send__comment"
+            style="width: 100% !important; height: 150px !important"
+          ></textarea>
+        </div>
+
         <button type="submit" class="send__btn">Send</button>
       </form>
-          </div>
+    </div>
     <!-- Send Ticlets Modal-->
     <div class="backdrop backdrop--hidden" data-tickets-modal>
-        <form class="tickets-form" id="ticketsForm">
-          <h2 class="form__title">Reserve Tickets</h2>
-          <button type="button" class="modal__btn-close" data-tickets-modal-close>
-              <i class="fa-solid fa-xmark close-modal"></i>
-            </button>
-          <ul class="fields">
-            <li class="fields__item">
-              <div class="form__field" >
-                <i class="fa-solid fa-user reg-form__input-icon"></i>
-                <input class="form__input" placeholder="name" type="text" id="nameTickets" />
-                <label class="form__label" for="nameTickets">Name</label>
-              </div>
-            </li>
-            <li class="fields__item">
-              <div class="form__field" >
-                <i class="fa-solid fa-envelope reg-form__input-icon"></i>
-                <input class="form__input" placeholder="email" type="email" id="emailTickets"
+      <form class="tickets-form" id="ticketsForm">
+        <h2 class="form__title">Reserve Tickets</h2>
+        <button type="button" class="modal__btn-close" data-tickets-modal-close>
+          <i class="fa-solid fa-xmark close-modal"></i>
+        </button>
+        <ul class="fields">
+          <li class="fields__item">
+            <div class="form__field">
+              <i class="fa-solid fa-user reg-form__input-icon"></i>
+              <input
+                class="form__input"
+                placeholder="name"
+                type="text"
+                id="nameTickets"
+              />
+              <label class="form__label" for="nameTickets">Name</label>
+            </div>
+          </li>
+          <li class="fields__item">
+            <div class="form__field">
+              <i class="fa-solid fa-envelope reg-form__input-icon"></i>
+              <input
+                class="form__input"
+                placeholder="email"
+                type="email"
+                id="emailTickets"
               />
               <label class="form__label" for="emailTickets">Email</label>
-              
-          </div>
-            </li>
-            <li class="fields__item">
-                <label class="coutry-select" for="contrySelect"
-                  >Select country to go</label
-                >
-                <div class="input-wrapper">
-                  <select class="form__input form__select" id="contrySelect">
-                    <option class="tickets__option " value="">--Please select a country--</option>
-                    <option class="tickets__option " value="France">France</option>
-                    <option class="tickets__option " value="Germany">Germany</option>
-                    <option class="tickets__option " value="Irelandr">Ireland</option>
-                    <option class="tickets__option " value="USA">USA</option>
-                    <option class="tickets__option " value="Spain">Spain</option>
-                  </select>
-                </div>
-              </li>
-  
-                      </ul>
-          <button type="submit" class="form__btn btn--ticket">Reserve Ticket</button>
+            </div>
+          </li>
+          <li class="fields__item">
+            <label class="coutry-select" for="contrySelect"
+              >Select country to go</label
+            >
+            <div class="input-wrapper">
+              <select class="form__input form__select" id="contrySelect">
+                <option class="tickets__option" value="">
+                  --Please select a country--
+                </option>
+                <option class="tickets__option" value="France">France</option>
+                <option class="tickets__option" value="Germany">Germany</option>
+                <option class="tickets__option" value="Irelandr">
+                  Ireland
+                </option>
+                <option class="tickets__option" value="USA">USA</option>
+                <option class="tickets__option" value="Spain">Spain</option>
+              </select>
+            </div>
+          </li>
+          <li class="fields__item-wrap">
+            <div class="control-wrapper">
+            <label class="date-label" for="date-text_start_date">Start date</label>
+            <div class="input-wrapper">
+              <input
+                id="date-text_start_date"
+                class="input-date form__input"
+                autocomplete="off"
+                type="text"
+                placeholder="Enter start date"
+              />
+            </div>
+            </div>
+            
+            <div class="control-wrapper">
+              <label class="date-label" for="date-text_end_date">End date</label>
+              <div class="input-wrapper">
+                <input
+                  id="date-text_end_date"
+                  class="input-date form__input"
+                  autocomplete="off"
+                  type="text"
+                  placeholder="Enter end date"
+                />
+              </div>
+            </div>
+                   
+          </li>
           
-        </form>
-      </div>
-
-   <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+        
+        </ul>
+        <button type="submit" class="form__btn btn--ticket">
+          Reserve Ticket
+        </button>
+      </form>
+    </div>
+    <script src="justValidatePlagin.min.js"></script>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
     <script src="inputmask.min.js"></script>
     <script src="script.js" type="module"></script>
     <script src="sendMessageModal.js" type="module"></script>

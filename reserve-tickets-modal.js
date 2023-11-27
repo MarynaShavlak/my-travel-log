@@ -1,4 +1,5 @@
 import { stopPropagation } from './script.js';
+
 const refsReserveTickets = {
   openModalBtn: document.querySelector('[data-tickets-modal-open]'),
   closeModalBtn: document.querySelector('[data-tickets-modal-close]'),
@@ -9,9 +10,13 @@ const refsReserveTickets = {
 const ticketsFormSelector = '#ticketsForm';
 const nameFieldSelector = '#nameTickets';
 const emailFieldSelector = '#emailTickets';
-const countryFieldSelector = '#contrySelect'
+const countryFieldSelector = '#contrySelect';
+const startDateFieldSelector = '#date-text_start_date';
+const endDateFieldSelector = '#date-text_end_date';
+
 
 const validationTickets = new JustValidate(ticketsFormSelector);
+
 
 validationTickets
   .addField(nameFieldSelector, [
@@ -45,7 +50,31 @@ validationTickets
       },
     },
   )
-
+  .addField(startDateFieldSelector, [
+    {
+      rule: 'required',
+    },
+    {
+      plugin: window.JustValidatePluginDate(() => ({
+        format: 'dd/MM/yyyy',
+      })),
+      errorMessage: 'Date should be in dd/MM/yyyy format (e.g. 28/11/2023)',
+    },
+  ])
+  .addField(endDateFieldSelector, [
+    {
+      rule: 'required',
+    },
+    {
+      plugin: window.JustValidatePluginDate((fields) => {
+        return {
+          format: 'dd/MM/yyyy',
+          isAfter: fields[startDateFieldSelector].elem.value,
+        };
+      }),
+      errorMessage: 'Date should be after start date',
+    },
+  ])
   .onFail(() => {
     addErrorClasses();
   });
