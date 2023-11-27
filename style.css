@@ -131,9 +131,13 @@ nav {
 }
 
 .hero {
-  /* background-image: url(images/gradient.png); */
+  background-image: url(images/hero-light-back.png),
+    url(images/hero-dark-back.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 608px 848px, 120px 407px;
+  background-position: top 220px left, bottom right;
+  background-repeat: no-repeat;
+
   padding-top: 110px;
   height: 638px;
 }
@@ -203,6 +207,12 @@ nav {
 .banner {
   padding-top: 55px;
   padding-bottom: 55px;
+  background-image: url(images/banner-left-back.png),
+    url(images/banner-right-back.png);
+  background-repeat: no-repeat;
+  background-size:433px 164px, 475px 88px;
+  background-position: top 50px left, bottom 60px right;
+  background-repeat: no-repeat;
 }
 .container--centered {
   display: flex;
@@ -259,6 +269,12 @@ nav {
   padding-top: 166px;
   padding-bottom: 47px;
   background-color: #eae8e8;
+  background-image: url(images/gallery-left-back.png),
+    url(images/gallery-right-back.png), url(images/gallery-light-back.png), url(images/gallery-dark-back.png) ;
+  background-repeat: no-repeat;
+  background-size:47px 798px, 73px 393px, 266px 884px, 424px 108px;
+  background-position: top 50px left, top 390px right, top 834px right, top 1467px left 137px;
+  background-repeat: no-repeat;
 }
 
 .gallery__list {
@@ -340,7 +356,7 @@ nav {
 }
 
 .badges__item:hover {
-     text-decoration: underline;
+  text-decoration: underline;
 }
 
 .badges__item:not(:last-child) {
@@ -385,6 +401,11 @@ nav {
   padding-top: 156px;
   padding-bottom: 156px;
   height: 873px;
+  background-image: url(images/chose-back.png);
+  background-repeat: no-repeat;
+  background-size: 523px 144px;
+  background-position:  bottom -25px left;
+  background-repeat: no-repeat;
 }
 
 .chose__container {
@@ -487,6 +508,12 @@ nav {
   padding-top: 50px;
   padding-bottom: 100px;
   background-color: #eae8e8;
+  background-image: url(images/reviews-left-back.png),
+    url(images/reviews-right-back.png);
+  background-repeat: no-repeat;
+  background-size:334px 172px, 407px 82px;
+  background-position: top  left, bottom right;
+  background-repeat: no-repeat;
 }
 
 .section-reviews__title {
@@ -649,6 +676,10 @@ nav {
   padding-top: 121px;
   padding-bottom: 118px;
   background-color: #c5c5c5;
+  background-image: url(images/footer-back.png);
+  background-repeat: no-repeat;
+  background-size: 396px 146px;
+  background-position: bottom 40px left;
 }
 .footer__nav {
   display: flex;
