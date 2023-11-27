@@ -33,6 +33,10 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+body.modal-open {
+    overflow: hidden;
+  }
+
 h1,
 h2,
 h3,
@@ -728,103 +732,3 @@ nav {
   color: #1e1e1e;
 }
 
-/*
-_________________________________________
-Modal styles
-_________________________________________
-
-*/
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-image: url(images/registration-back.png);
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: 100vh;
-  z-index: 2;
-  background-position: center;
-  background-size: cover;
-}
-
-.modal__form {
-  position: absolute;
-  padding: 26px 229px;
-  margin: 0 auto;
-  width: 854px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.32);
-  border-radius: 30px;
-  backdrop-filter: blur(20px);
-  color: #ffffff;
-}
-
-.form__title {
-  text-align: center;
-  font-size: 40px;
-  font-weight: 600;
-  margin-bottom: 33px;
-}
-
-.fields {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 33px;
-}
-
-.fields__item {
-  width: 318px;
-}
-.form__label {
-  font-family: 'Roboto', sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-}
-
-.form__input {
-  width: 100%;
-  padding: 10px 20px;
-  border-radius: 20px;
-  border: none;
-}
-
-.form__btn {
-  font-family: Outfit, sans-serif;
-  border-radius: 15px;
-  border: none;
-  background-color: #729100;
-  font-size: 36px;
-  padding: 15px 20px;
-  color: #ffffff;
-  width: 100%;
-  cursor: pointer;
-  transition: background-color ease-in 300ms, color ease-in 300ms;
-}
-
-.form__btn:hover {
-  color: #729100;
-  background-color: #ffffff;
-}
-
-.action-btn-list {
-  display: flex;
-  gap: 20px;
-}
-
-.btn--redirect-to-reg {
-  color: #729100;
-  background-color: #ffffff;
-}
-.btn--redirect-to-reg:hover {
-  background-color: #729100;
-  color: #ffffff;
-}
-
-.isHidden {
-  display: none;
-}
